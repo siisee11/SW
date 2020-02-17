@@ -19,14 +19,12 @@ def solution(n, t, m, timeTable):
         time.append(timeToInt(tt))
     time.sort()
     
-    secondLate = time[-1] - 1
-
     for i in range(n):
         btime.append(baseTime + i * t)
         
     for bus in btime:
         on = 0
-        for idx, crew in enumerate(time):
+        for crew in time:
             if crew <= bus:
                 on += 1
             else:
