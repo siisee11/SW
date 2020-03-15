@@ -21,6 +21,7 @@ if __name__ == "__main__":
     L = int(input())
     turn = [input().split() for _ in range(L)]
 
+    # 초당 1 루프
     while True:
         time += 1
         next = tuple(map(sum, zip(snake[HEAD], dir_dic[direction])))
@@ -33,6 +34,8 @@ if __name__ == "__main__":
         snake.insert(HEAD, next)
         if Matrix[snake[HEAD]] != 2:
             snake.pop()
+        else :
+            Matrix[snake[HEAD]] = 0
 
         # 방향 전환
         if turn and time == int(turn[0][0]):

@@ -1,7 +1,6 @@
 import numpy as np
 
 t = []
-
 t.append(np.array([[1, 1, 1, 1]]))
 t.append(np.array([[1, 0], [1, 0], [1, 1]]))
 t.append(np.array([[0, 1], [0, 1], [1, 1]]))

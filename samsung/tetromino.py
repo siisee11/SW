@@ -7,6 +7,7 @@ t.append([[0, 1], [1, 1], [1, 0]])
 t.append([[1, 1], [1, 1]])
 t.append([[1, 1, 1], [0, 1, 0]])
 
+# Matrix dot 연산
 def dot(mat, kernel):
     y, x = len(mat), len(mat[0])
     ret = 0
@@ -15,6 +16,7 @@ def dot(mat, kernel):
             ret += mat[i][j] * kernel[i][j]
     return ret
 
+# Convolution 결과 중 가장 큰 element 반환
 def convolution2d(image, kernel):
     m, n = len(kernel), len(kernel[0])
     y, x = len(image), len(image[0])
