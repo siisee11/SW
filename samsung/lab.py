@@ -15,7 +15,7 @@ def virus(board, initial_viruses, min_virus, walls) :
             break
         virus = viruses.pop(0)
         if min_virus < cur_virus:
-            return cur_virus
+            return min_virus
         for direction in range(4) :
             next = tuple(map(sum, zip(virus, dir_dic[direction])))
             if board[next] == 0:
@@ -43,8 +43,8 @@ if __name__ == "__main__" :
             elif line[y - 1] == 1:
                 initial_wall += 1
     
-    for i in range(N) :
-        for j in range(M) :
+    for i in range(1, N+1) :
+        for j in range(1, M+1) :
             if board[(i,j)] == 0 :
                 idx.append((i, j))
     combi = list(combinations(idx, 3))
@@ -53,5 +53,4 @@ if __name__ == "__main__" :
         ret = virus(copy.deepcopy(board), copy.deepcopy(initial_viruses), copy.deepcopy(min_virus), walls)
         min_virus = ret if ret < min_virus else min_virus
 
-    print(initial_wall, min_virus)
     print(N * M - min_virus - initial_wall)
